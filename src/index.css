@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 温暖明亮的儿童友好配色 */
+    --background: 45 100% 98%;
+    --foreground: 240 10% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 20%;
+    
+    /* 活力橙色主色调 */
+    --primary: 24 95% 58%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* 天空蓝辅助色 */
+    --secondary: 199 89% 60%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* 薄荷绿色调 */
+    --muted: 158 64% 85%;
+    --muted-foreground: 158 40% 30%;
+    
+    /* 柔和紫色强调 */
+    --accent: 280 67% 65%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* 成功绿色 */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    /* 警示红色 */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* 阳光黄色 */
+    --warning: 45 93% 58%;
+    --warning-foreground: 45 50% 15%;
+    
+    --border: 45 30% 88%;
+    --input: 45 30% 92%;
+    --ring: 24 95% 58%;
+    --radius: 1rem;
+    
+    /* 游戏专用色彩 */
+    --game-red: 0 85% 60%;
+    --game-blue: 210 90% 55%;
+    --game-green: 142 70% 50%;
+    --game-yellow: 45 95% 55%;
+    --game-purple: 280 70% 60%;
+    --game-pink: 330 80% 65%;
+    --game-orange: 24 95% 58%;
+    --game-cyan: 185 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Comic Sans MS', 'Segoe UI', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-rainbow {
+    background: linear-gradient(
+      135deg,
+      hsl(0 85% 60%) 0%,
+      hsl(45 95% 55%) 20%,
+      hsl(142 70% 50%) 40%,
+      hsl(185 80% 50%) 60%,
+      hsl(210 90% 55%) 80%,
+      hsl(280 70% 60%) 100%
+    );
+  }
+  
+  .game-card-hover {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .game-card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+  
+  .text-shadow-fun {
+    text-shadow: 3px 3px 0 hsl(var(--primary) / 0.2);
+  }
+}
